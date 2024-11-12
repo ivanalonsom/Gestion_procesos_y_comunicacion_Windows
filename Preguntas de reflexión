@@ -1,0 +1,17 @@
+1) ¿Qué ventajas y desventajas tiene la ejecución de programas de manera síncrona versus asíncrona?
+
+Ejecutar un programa de manera asíncrona me puede resultar útil en situaciones en las que no quiera esperar a que el usuario o sistema realice una acción en concreto para 
+poder continuar. Se me ocurre por ejemplo, un contador que, una vez se haya abierto una ventana (un proceso) me de X segundos para completarlo hasta su cierre. Esto de 
+manera síncrona no sería posible, pues el sistema esperaría a que el usuario cerrase ese proceso para continuar "leyendo" el resto del código. Sin irnos a casos concretos, 
+la programación asíncrona resulta muy útil en páginas web de cierta peso, de cara a no tener al usuario sin poder esperando mientras cargan los elementos.
+
+Por su parte, la ejecución síncrona tiene sus ventajas en el hecho de que, además de ser sintácticamente más sencilla, el código se ejecuta de manera más ordenada, en el sentido de que hasta que una sentencia no acaba, no se lee la siguiente. Es por tanto que, cuando necesitamos realizar tareas precisas como consultas en una BD, es más recomendable este método.
+
+2) ¿Por qué es importante manejar las excepciones al trabajar con procesos?
+
+La importancia radica en que pueden darse errores por diversos tipos ajenos a nosotros (a nuestro script) como problemas de permisos, de configuraciones incorrectas...
+Si no manejásemos las excepciones correctamente, podriamos dejar recursos importantes bloqueados o, aunque no fueran importantes, ocupar memoría innecesariamente. Además, una excepción no manejada podría hacer que perdamos datos o que un servicio X se detenga.
+
+3) ¿Qué tipo de problemas se pueden presentar al comunicarse entre procesos? ¿Cómo los has solucionado?
+
+Se pueden dar problemas de que más de un proceso intente acceder a la vez a recursos compartidos, dando resultados impredecibles. En la tarea no ha sucedido, sin embargo, en clase, solucionábamos estas "condiciones de carrera" utilizando mecanismos de sincronización como Lock.
